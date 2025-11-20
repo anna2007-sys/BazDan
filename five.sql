@@ -17,11 +17,12 @@ ALTER TABLE books ADD CONSTRAINT published_year CHECK (published_year < 2026);
 
 ALTER TABLE books DROP COLUMN authors_id;
 
-CREAT TABLE book_authors(
+CREATE TABLE book_authors(
     books_id INT,
     authors_id INT,
     PRIMARY KEY (books_id, authors_id),
     FOREIGN KEY (books_id) REFERENCES books(books_id),
     FOREIGN KEY (authors_id) REFERENCES authors(authors_id)
 
-)
+);
+
